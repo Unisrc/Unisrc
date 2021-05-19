@@ -1,0 +1,65 @@
+
+# Unisrc
+
+Unisrc is a framework that runs on the LAMP and WEBR stack.
+
+* LAMP: _Linux with Apache, MySQL & PHP_
+* WEBR:	_Web Browser with modern HTML, CSS & JS_
+
+This is a first mandatory install to further explore anything Unisrc.
+This repository is often referred in documentation by `UBS` (_Unisrc Base Server_), which shifts the context to the role it fulfills.
+
+`UBS` manages install, setup and updates of `UCRs` (_Unisrc Compliant Repositories_).
+ A `UCR` is of a design that `UBS` knows and hosts, much like an OS hosts APPs.
+But next to being an APP, a `UCR` can be anything, like a module, api, library, or even one class, function or an asset.
+
+`UCRs` will be git cloned inside Unisrc/ucr/* and then interlaced inside `UST` by symbolic links,
+so all the UCR sources become part of the Unisrc environment, addressing and loading model.
+
+
+.Unisrc Directory Tree (`UDT`)
+----
+unisrc/
+    bin/                Binaries; links into ust/bin/* often used by devs.
+    dat/                All application data will be stored here.
+		etc/			Edit to config files.
+		mfs/			Memory file system files; small fast files access.
+		var/			Bigger files for read access most of the time.
+    dta/                Direct Tree Access; UST access by flat list of symlinks; for UST devs.
+    hta/                Hypertext Assets; links into ust/(ast/www|xsc/jsb)/*; http served.
+	reg/				Registry for developers, their `UCRs`, stats, rating, safety level, etc.
+    ucr/                `UCRs` will be cloned by `UBS` in here.
+        {devns}/            Java-like developer namespace (i.e: tld.sld).
+            {repo}/         Name of the repo.
+    ust/                _Unisrc Source Tree_ or `UST`.
+        ast/            Assets.
+            sys/            System/server side
+            www/            Browser/client side
+        bin/            Binaries; php written; wires into ust/epc; for devs.
+        cfg/            Config specs and infills
+        doc/            Documentation; multilingual, in adoc.
+            dev/            For developers
+            usr/            For Users
+        epc/            Entry Points CLI; where exec begins; refs into ust/src
+        eph/            Entry Points HTTP; where exec begins; refs into ust/src
+        src/            	Source code that runs Unisrc.
+            js_/            Javascript; platform independent
+            jsb/            Javascript; for the web browser
+            php_/           PHP; platform independent
+            phpc/           PHP; CLI
+            phph/           PHP; HTTP
+        txt/            All textual things; multilingual in json
+            fb/             Feedback; source code message system
+            gtx/            Gui text; App or module textual makeup/guiding
+            cfg/            Cfg text; ust/cfg textual description or help fields
+----
+
+
+[NOTE]
+====
+- This framework is unstable until release 1.0.0
+- Install script is required to wired everything up the right way, but not yet available.
+- The desktop is not available yet.
+====
+
+ 
