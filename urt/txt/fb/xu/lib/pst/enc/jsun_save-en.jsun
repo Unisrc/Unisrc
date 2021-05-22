@@ -1,0 +1,4 @@
+{
+    "fput": "Cannot write JSUN file: '%s'",
+    "json": "Cannot encode JSUN for file: '%s'"
+}

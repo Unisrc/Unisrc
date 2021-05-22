@@ -1,0 +1,4 @@
+{
+    "fget": "Cannot open JSUN file: '%s'",
+    "json": "Cannot decode JSUN in file: '%s'"
+}
