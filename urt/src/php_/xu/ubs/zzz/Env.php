@@ -83,12 +83,12 @@ class Env {
 		$Env->lcd = 'en';
 
 		$Env->unisrc = $UNISRC;
-		$Env->rttree = $rttree = $UNISRC.'urt/';
+		$Env->urtree = $urtree = $UNISRC.'urt/';
 
-		$Env->astsys = $rttree.'ast/sys/';
-		$Env->astwww = $rttree.'ast/www/';
-		$Env->cfgdir = $rttree.'cfg/';
-		$Env->srcdir = $srcdir = $rttree.'src/';
+		$Env->astsys = $urtree.'ast/sys/';
+		$Env->astwww = $urtree.'ast/www/';
+		$Env->cfgdir = $urtree.'cfg/';
+		$Env->srcdir = $srcdir = $urtree.'src/';
 		$Env->js_dir = $srcdir.'js_/';
 		$Env->jsbdir = $srcdir.'jsb/';
 		$Env->php_dir = $php_dir = $srcdir.'php_/';
