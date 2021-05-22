@@ -56,7 +56,7 @@ class env {
 	lcd		chars(2):	language code
 
 	unisrc	abspath:	Unisrc directory
-	rttree	abspath:	Unisrc Runtime Tree (URT)
+	urtree	abspath:	Unisrc Runtime Tree (URT)
 
 	astsys	abspath:	URT ast/sys/ dir
 	astwww	abspath:	URT ast/www/ dir

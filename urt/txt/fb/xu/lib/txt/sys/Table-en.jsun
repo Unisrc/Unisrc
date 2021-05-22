@@ -1,0 +1,6 @@
+{
+    "ttflb": "Non existing or bad formatted text table '%s'; fallback to 'en'.",
+    "ttbad2": "Non existing or bad formatted text table '%s-??.jsun' in both languages 'en' and '%s'.",
+    "ttbad": "Non existing or bad formatted text table '%s-%s.jsun'.",
+    "ttkey": "Unknown key '%s' in text table '%s-en.jsun'."
+}

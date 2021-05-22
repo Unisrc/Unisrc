@@ -22,13 +22,13 @@ so all the UCR sources become part of the Unisrc environment, addressing and loa
 unisrc/
     bin/                Binaries; links into urt/bin/* often used by devs.
     dat/                All application data will be stored here.
-		etc/			Edit to config files.
-		mfs/			Memory file system files; small fast files access.
-		var/			Bigger files for read access most of the time.
-		usr/			User app data, media files, etc.
+        etc/			Edit to config files.
+        mfs/			Memory file system files; small fast files access.
+        var/			Bigger files for read access most of the time.
+        usr/			User app data, media files, etc.
     fta/                Flat Tree Access; URT access by flat list of symlinks; for URT devs.
     hta/                Hypertext Assets; links into urt/(ast/www|xsc/jsb)/*; http served.
-	reg/				Registry for developers, their `UCRs`, stats, rating, safety level, etc.
+    reg/				Registry for developers, their `UCRs`, stats, rating, safety level, etc.
     ucr/                `UCRs` will be cloned by `UBS` in here.
         {devns}/            Java-like developer namespace (i.e: tld.sld).
             {repo}/         Name of the repo.
