@@ -2,7 +2,7 @@
 namespace Unisrc\xu\lib\txt\sys;
 
 use Unisrc\xu\lib\env;
-use Unisrc\xu\lib\pst\enc\jsun_load;
+use Unisrc\xu\lib\pst\enc\jsunLoad;
 use Unisrc\xu\lib\txt\Fb;
 
 /*
@@ -72,7 +72,7 @@ class Table {
         $rpTable = self::makeUID($base, $rpClass);
         $fnTable = $txtdir.$rpTable;
 
-        if($data = jsun_load::_($fnTable)){
+        if($data = jsunLoad::_($fnTable)){
 
             return ($instanciate) ? new Table($data, $rpTable) : [ $data, $rpTable ];
 
@@ -81,7 +81,7 @@ class Table {
             $rpTable = self::makeUID($base, $rpClass, 'en');
             $fnTable = $txtdir.$rpTable;
 
-            if($data = jsun_load::_($fnTable)){
+            if($data = jsunLoad::_($fnTable)){
 
                 Fb::warning(__CLASS__, 'ttflb', $rpTable);
 
