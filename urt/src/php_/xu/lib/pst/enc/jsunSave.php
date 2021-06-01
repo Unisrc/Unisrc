@@ -29,9 +29,9 @@ It is expected that this function will not be used a lot if at all;
 JSUN files are written/maintained by hand.
 
 
-+ See jsun_load.php for more comments.
++ See jsunLoad.php for more comments.
 */
-class jsun_save {
+class jsunSave {
 
     public static function _($fn, $mixed, $operation=null){
 

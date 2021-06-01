@@ -45,7 +45,7 @@ PARAMS:
         For example, class Fb that relies on JSUN load,
 		suppresses errors, to prevent an endless recursion.
 */
-class jsun_load {
+class jsunLoad {
 
     public static function _($fn, $operation=null, $fb=true){
 
