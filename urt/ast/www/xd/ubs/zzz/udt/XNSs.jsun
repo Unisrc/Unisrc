@@ -1,0 +1,12 @@
+/*
+!!! DO NOT MODIFY !!!
+This file is generated at architecture level (xa).
+*/
+[
+	[ "xa", "UCR", "Unisrc Architect" ],
+	[ "xc", "UCR", "Unisrc Contributer" ],
+	[ "xd", "UBS", "Unisrc Developer" ],
+	[ "xt", "UCR", "Unisrc Translator" ],
+	[ "xu", "UBS", "Unisrc Base Server" ],
+	[ "xw", "UCR", "Unisrc Web Master" ]
+]
