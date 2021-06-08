@@ -1,0 +1,9 @@
+/*
+!!! DO NOT MODIFY !!!
+This file is generated at architecture level (xa).
+*/
+[
+	[ "_dtx", "Demos, tests and experiments." ],
+	[ "_sic", "Setup, install, config, compile, cleanup repository." ],
+	[ "_rem", "Remote source code ready for install." ]
+]
