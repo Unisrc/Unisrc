@@ -39,7 +39,8 @@ unisrc/
         bin/            Binaries; php written; wires into urt/epc; for devs.
         cfg/            Config specs and infills
         doc/            Documentation; multilingual, in adoc.
-            dev/            For developers
+			arc/			For Architects
+            dev/            For Developers
             usr/            For Users
         epc/            Entry Points CLI; where exec begins; refs into urt/src
         eph/            Entry Points HTTP; where exec begins; refs into urt/src
