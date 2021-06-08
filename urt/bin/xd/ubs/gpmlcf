@@ -1,0 +1,27 @@
+#!/usr/bin/php
+<?php
+include	__DIR__.'/../../../epc/xu/ubs/env.php';
+
+use Unisrc\xu\lib\txt\Fb;
+use Unisrc\xd\ubs\zzz\udt\git\gpmlcf;
+
+$argv = $_SERVER['argv'];
+$doit = !!(isset($argv[1]) && $argv[1] == 'doit');
+$rmdp = !!(isset($argv[1]) && $argv[1] == 'rmdp');
+
+
+Fb::setGenericOutputHandler();
+gpmlcf::_($doit, $rmdp);
+
+
+if(!($doit || $rmdp)){
+	echo <<< EOT
+---
+MODE = dry-run
+To actually perform these actions:
+$ gpmlcf doit
+To remove all DPFs:
+$ gpmlcf rmdp
+
+EOT;
+}
