@@ -1,0 +1,38 @@
+/*
+!!! DO NOT MODIFY !!!
+This file is generated at architecture level (xa).
+*/
+{
+	"name":	"UDT Nodes",
+	"cols":	 [ "id", "pid", "idx", "node", "flags", "description" ],
+	"idc": 28,
+	"data": [
+		[ 1,0,0,	"bin",		"",			"Binaries; links into urt/bin/* often used by devs." ],
+		[ 2,0,1,	"dat",		"", 			"All application data will be stored here." ],
+		[ 3,2,0,	"etc",		"", 			"Edit to config files." ],
+		[ 4,2,1,	"mfs",		"", 			"Memory file system files; small fast files access." ],
+		[ 5,2,2,	"var",		"", 			"Bigger files for read access most of the time." ],
+		[ 6,2,3,	"usr",		"", 			"User app data, media files, etc." ],
+		[ 7,0,2,	"fta",		"", 			"Flat Tree Access; URT access by flat list of symlinks; for URT devs." ],
+		[ 8,0,3,	"hta",		"", 			"Hypertext Assets; links into urt/(ast/www|xsc/jsb)/*; http served." ],
+		[ 9,0,4,	"reg",		"", 			"Registry for developers, their `UCRs`, stats, rating, safety level, etc." ],
+		[ 10,0,5,	"ucr",		"", 			"`UCRs` will be cloned by `UBS` in here." ],
+		[ 11,0,6,	"urt",		"", 			"Unisrc Runtime Tree_ or `URT`." ],
+		[ 12,11,0,	"ast",		"", 			"Assets." ],
+		[ 13,12,0,	"sys",		"LTR|XNS", 		"System/server side" ],
+		[ 14,12,1,	"www",		"LTR|XNS", 		"Browser/client side" ],
+		[ 15,11,1,	"bin",		"XNS", 			"Binaries; php written; wires into urt/epc; for devs." ],
+		[ 16,11,2,	"cfg",		"XNS", 			"Config specs and infills" ],
+		[ 17,11,3,	"doc",		"", 			"Documentation; multilingual, in adoc." ],
+		[ 18,17,1,	"arc",		"LCD|XNS",		"For architects" ],
+		[ 19,17,2,	"dev",		"LCD|XNS",		"For developers" ],
+		[ 20,17,3,	"usr",		"LCD|XNS",		"For Users" ],
+		[ 21,11,4,	"epc",		"XNS", 			"Entry Points CLI; where exec begins; refs into urt/src" ],
+		[ 22,11,5,	"eph",		"XNS", 			"Entry Points HTTP; where exec begins; refs into urt/src" ],
+		[ 23,11,6,	"src",		"PLA|LTR|XNS", 	"Source code that runs Unisrc." ],
+		[ 24,11,7,	"txt",		"", 			"All textual things; multilingual in json" ],
+		[ 25,24,1,	"fb",		"LTR|XNS", 		"Feedback; source code message system" ],
+		[ 26,24,2,	"gtx",		"LTR|XNS", 		"Gui text; App or module textual makeup/guiding" ],
+		[ 27,24,3,	"cfg",		"LTR|XNS", 		"Cfg text; urt/cfg textual description or help fields" ]
+	]
+}
