@@ -1,0 +1,11 @@
+/*
+!!! DO NOT MODIFY !!!
+This file is generated at architecture level (xa).
+*/
+[
+	[ "js_", "Javascript; platform independent." ],
+	[ "jsb", "Javascript; browser DOM." ],
+	[ "php_", "PHP; platform independent." ],
+	[ "phpc", "PHP; CLI; command line interface." ],
+	[ "phph", "PHP; HTTP; Pre HTML Processor; HTTPd module." ]
+]
