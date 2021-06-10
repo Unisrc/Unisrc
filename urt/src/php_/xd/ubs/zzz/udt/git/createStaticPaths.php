@@ -14,17 +14,21 @@ class createStaticPaths {
 	public static function _($doit, $listfunc){
 
 		$unisrc = env::_('unisrc');
-		$paths = Nodes::staticPaths(true);
-		$list = [];
+		$paths = Nodes::staticPaths();
+		$fb = [];
 
 		foreach($paths as $path){
-			if(!file_exists($fdn = $unisrc.$path.'/')){
+
+			$relpath = $path.'/';
+			$abspath = $unisrc.$relpath;
+
+			if(!file_exists($abspath)){
 				if($doit)
-					path::_($fdn);
-				$list[] = $fdn;
+					path::_($abspath);
+				$fb[] = $relpath;
 			}
 		}
 
-		return $listfunc($list);
+		return $listfunc($fb);
 	}
 }
