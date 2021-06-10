@@ -7,7 +7,7 @@ This file is generated at architecture level (xa).
 	"cols":	 [ "id", "pid", "idx", "node", "flags", "description" ],
 	"idc": 28,
 	"data": [
-		[ 1,0,0,	"bin",		"",			"Binaries; links into urt/bin/* often used by devs." ],
+		[ 1,0,0,	"bin",		"",				"Binaries; links into urt/bin/* often used by devs." ],
 		[ 2,0,1,	"dat",		"", 			"All application data will be stored here." ],
 		[ 3,2,0,	"etc",		"", 			"Edit to config files." ],
 		[ 4,2,1,	"mfs",		"", 			"Memory file system files; small fast files access." ],

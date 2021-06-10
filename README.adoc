@@ -22,13 +22,13 @@ so all the UCR sources become part of the Unisrc environment, addressing and loa
 unisrc/
     bin/                Binaries; links into urt/bin/* often used by devs.
     dat/                All application data will be stored here.
-        etc/			Edit to config files.
-        mfs/			Memory file system files; small fast files access.
-        var/			Bigger files for read access most of the time.
-        usr/			User app data, media files, etc.
+        etc/            Edit to config files.
+        mfs/            Memory file system files; small fast files access.
+        var/            Bigger files for read access most of the time.
+        usr/            User app data, media files, etc.
     fta/                Flat Tree Access; URT access by flat list of symlinks; for URT devs.
     hta/                Hypertext Assets; links into urt/(ast/www|xsc/jsb)/*; http served.
-    reg/				Registry for developers, their `UCRs`, stats, rating, safety level, etc.
+    reg/                Registry for developers, their `UCRs`, stats, rating, safety level, etc.
     ucr/                `UCRs` will be cloned by `UBS` in here.
         {devns}/            Java-like developer namespace (i.e: tld.sld).
             {repo}/         Name of the repo.
@@ -39,12 +39,12 @@ unisrc/
         bin/            Binaries; php written; wires into urt/epc; for devs.
         cfg/            Config specs and infills
         doc/            Documentation; multilingual, in adoc.
-			arc/			For Architects
+            arc/            For Architects
             dev/            For Developers
             usr/            For Users
         epc/            Entry Points CLI; where exec begins; refs into urt/src
         eph/            Entry Points HTTP; where exec begins; refs into urt/src
-        src/            	Source code that runs Unisrc.
+        src/                Source code that runs Unisrc.
             js_/            Javascript; platform independent
             jsb/            Javascript; for the web browser
             php_/           PHP; platform independent
@@ -55,7 +55,7 @@ unisrc/
             gtx/            Gui text; App or module textual makeup/guiding
             cfg/            Cfg text; urt/cfg textual description or help fields
 ----
-
+//........ ////
 
 [NOTE]
 ====
