@@ -26,17 +26,22 @@ class createDirPersistFiles {
 		$dpfn = self::FN;
 
 		$ttcb_setDPF = self::ttcb_setDPF($doit, $unisrc, $dpfn, $fb, $rm);
-		$ttcb_setDPF($unisrc, '');
 		
 		$XNSs = XNSs::keys('UBS');
-		$paths = Nodes::possiblePaths();
-		foreach($paths as $path){
+
+		$staticPaths = Nodes::staticPaths();
+		$lookupStatic = array_fill_keys($staticPaths, 0);
+
+		$possiblePaths = Nodes::possiblePaths();
+		foreach($possiblePaths as $path){
 
 			$abspath = $unisrc.$path.'/';
 
 			if(file_exists($abspath)){
 
-				$ttcb_setDPF($abspath, '');
+				$bStatic = isset($lookupStatic[$path]);
+
+				$ttcb_setDPF($abspath, '', $bStatic, -1);
 
 				foreach($XNSs as $xns){
 					if(preg_match("/$xns$/", $path)){
@@ -62,17 +67,21 @@ class createDirPersistFiles {
 	*/
 	private static function ttcb_setDPF($doit, $unisrc, $dpfn, &$fb, $rm){
 
-		return function($node, $dn) use($doit, $unisrc, $dpfn, &$fb, $rm){
+		return function($node, $dn, $isd, $z) use($doit, $unisrc, $dpfn, &$fb, $rm){
+
+			$bStatic = ($z == -1) ? $isd : false;
 
 			$relpath = str_replace($unisrc, '', $node.(($dn) ? $dn.'/' : ''));
 			$abspath = $unisrc.$relpath;
 			$absDPF = $abspath.$dpfn;
 			$relDPF = $relpath.$dpfn;
 
-			$len = count(files::_($abspath, null, true, 2));
+			$exists = file_exists($absDPF);
+			$length = count(files::_($abspath, null, true, 2));
 
 			if(!$rm){
-				if(!$len){
+
+				if(!$length || (!$exists && $bStatic)){
 
 					if($doit){
 						list($mcs, $uts) = explode(' ', microtime());
@@ -81,16 +90,16 @@ class createDirPersistFiles {
 					}
 					$fb[0][] = $relDPF;
 
-				}else if($len > 1){
+				}else if($length > 1){
 
-					if(file_exists($absDPF)){
+					if($exists && !$bStatic){
 						if($doit)
 							unlink($absDPF);
 						$fb[1][] = $relDPF;
 					}
 				}
 			}else{
-				if(file_exists($absDPF)){
+				if($exists){
 					unlink($absDPF);
 					$fb[1][] = $relDPF;
 				}
