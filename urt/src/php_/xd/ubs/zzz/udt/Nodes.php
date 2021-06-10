@@ -24,13 +24,13 @@ class Nodes {
 	DESCR:
 		The static defined tree of UDT.
 	*/
-	public static function staticPaths($bPLAs=false){
+	public static function staticPaths(){
 
 		static $paths=[];
 
 		if($paths) return $paths;
 
-		$PLAs = ($bPLAs) ? PLAs::keys() : false;
+		$PLAs = PLAs::keys();
 		
 		$stack=[];
 
