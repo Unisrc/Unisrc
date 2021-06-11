@@ -1,0 +1,10 @@
+{
+	"report": [
+		"  file data: %s",
+		"    data is: %s",
+		"       mode: %s",
+		"path create: %s",
+		"file exsist: %s",
+		"file create: %s"
+	]
+}
