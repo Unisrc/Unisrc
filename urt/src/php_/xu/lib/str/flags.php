@@ -9,11 +9,16 @@ DESCR:
 	and returns a boolean for each of those options.
 
 PARAM:
-	$field		string; '|' separated.
+	$field		string
 		The string to investigate.
 
-	$options	string; '|' separated.
+	$options	string
 		The string containing the flags to look for in $string.
+	
+	$sep		string
+		Separator used in $options.
+		If none is given, options is considered to be
+		a string of flag chars and is split in chars.
 
 RETURNS:
 	zb array with booleans
@@ -25,11 +30,11 @@ NOTES:
 */
 class flags {
 
-	public static function _($field, $options){
+	public static function _($field, $options, $sep='|'){
 		
 		$bools = [];
 
-		$options = explode('|', $options);
+		$options = ($sep) ? explode($sep, $options) : str_split($options);
 		foreach($options as $opt)
 			$bools[] = contains::_($field, $opt);
 		
