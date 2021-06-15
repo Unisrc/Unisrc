@@ -1,0 +1,6 @@
+#!/usr/bin/php
+<?php
+$env = include	__DIR__.'/../../../epc/xu/ubs/env.php';
+
+use Unisrc\xa\arc\zzz\xaxzexport;
+xaxzexport::_();

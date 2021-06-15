@@ -1,10 +1,11 @@
 {
 	"report": [
 		"  file data: %s",
-		"    data is: %s",
 		"       mode: %s",
+		"    data is: %s",
 		"path create: %s",
 		"file exsist: %s",
-		"file create: %s"
+		"file create: %s",
+		"   filename: %s"
 	]
 }

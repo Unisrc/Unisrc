@@ -9,6 +9,8 @@ Unisrc is a framework that runs on the LAMP and WEBR stack.
 This is a first mandatory install to further explore anything Unisrc.
 This repository is often referred to in documentation by `UBS` (_Unisrc Base Server_), shifting the context to the role it fulfills.
 
+### About UBS
+
 `UBS` manages install, setup and updates of `UCRs` (_Unisrc Compliant Repositories_).
  A `UCR` is of a design that `UBS` knows and hosts, much like an OS hosts APPs.
 But next to being an APP, a `UCR` can be anything, like a module, api, library, or even one class, function or an asset.
@@ -55,7 +57,33 @@ unisrc/
             gtx/            Gui text; App or module textual makeup/guiding
             cfg/            Cfg text; urt/cfg textual description or help fields
 ----
-//........ ////
+
+#### About git commit and merge prefixes
+
+These are mostly 3 characters long uppercase mnemonics explaining the main
+action performed in git commits and merges.
+
+
+.legend
+----
+BRANCH:
+	NEW		Add new feature.
+	EXT		Extend existing functionality.
+	ENH		Enhance code; readability, comments, etc.
+	OPT		Optimize code; for speed or size.
+	REA		Rearrange code; in order to improve setup, coupling, expandability, etc.
+	MIG		Migrate code; refactor to from one to another set of dependencies.
+	FIX		Fix code; remove a quirk or a bug.
+
+COMMIT:
+	ADD		Add a new file or a set of files.
+	UPD		Update
+	REN		Rename
+	MOV		Move
+	DEL		Delete
+	MTN		Maintain; update .gitignore file; create|delete .udt files.
+----
+
 
 [NOTE]
 ====
