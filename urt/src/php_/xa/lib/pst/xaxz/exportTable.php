@@ -43,7 +43,7 @@ class exportTable {
 		//Create JSUN file data
 		$nsGenerator = dntons::_($dnGenerator);
 		$table = $nsGenerator();
-		$lines = join("/\",\n\t\"", $table);
+		$lines = join("\",\n\t\"", $table);
 		$jsun = <<< EOT
 		/*
 		!!! DO NOT MODIFY !!!
@@ -56,7 +56,7 @@ class exportTable {
 		EOT;
 
 		$fb['fd'] = $jsun;
-		$fb['di'] = 'generated but not written yet';
+		$fb['di'] = 'Generated, but not written yet.';
 
 		//Ensure path
 		if(!file_exists($abspath)){
@@ -94,9 +94,8 @@ class exportTable {
 			$nsReader = dntons::_($dnReader);
 			if(($table = $nsReader()) && is_array($table)){
 				$fb['fd'] = $_jsun = file_get_contents($ffn);
-				$result = ($jsun == $_jsun) ? 'OK' : 'FAILURE';
-				$fb['di'] = "readback with integrity check: [ $result ]";
-				
+				$result = ($jsun == $_jsun) ? 'YES' : 'NO';
+				$fb['di'] = "Read back file. Is same?: [ $result ]";
 			}
 		}
 

@@ -1,5 +1,5 @@
 <?php
-namespace Unisrc\xd\ubs\zzz\udt;
+namespace Unisrc\xu\ubs\zzz\udt;
 
 use Unisrc\xu\lib\env;
 
@@ -40,6 +40,6 @@ class PLAs {
 
 		if($table) return $table;
 
-		return $table = jsunLoad::_(env::_('astwww').'xd/ubs/zzz/udt/PLAs.jsun');
+		return $table = jsunLoad::_(env::_('astwww').'xu/ubs/zzz/udt/PLAs.jsun');
 	}
 }

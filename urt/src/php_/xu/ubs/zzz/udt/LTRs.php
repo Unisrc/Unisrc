@@ -1,5 +1,5 @@
 <?php
-namespace Unisrc\xd\ubs\zzz\udt;
+namespace Unisrc\xu\ubs\zzz\udt;
 
 use Unisrc\xu\lib\env;
 
@@ -47,6 +47,6 @@ class LTRs {
 
 		if($table) return $table;
 
-		return $table = jsunLoad::_(env::_('astwww').'xd/ubs/zzz/udt/LTRs.jsun');
+		return $table = jsunLoad::_(env::_('astwww').'xu/ubs/zzz/udt/LTRs.jsun');
 	}
 }

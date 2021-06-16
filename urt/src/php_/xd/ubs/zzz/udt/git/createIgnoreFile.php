@@ -3,8 +3,8 @@ namespace Unisrc\xd\ubs\zzz\udt\git;
 
 use Unisrc\xu\lib\env;
 
-use Unisrc\xd\ubs\zzz\udt\Nodes;
-use Unisrc\xd\ubs\zzz\udt\XNSs;
+use Unisrc\xu\ubs\zzz\udt\XNSs;
+use Unisrc\xu\ubs\zzz\udt\possiblePaths;
 
 class createIgnoreFile {
 
@@ -38,7 +38,7 @@ class createIgnoreFile {
 		];
 
 		$XNSs = XNSs::keys('UBS');
-		$paths = Nodes::possiblePaths();
+		$paths = possiblePaths::_();
 
 		foreach($paths as $path){
 

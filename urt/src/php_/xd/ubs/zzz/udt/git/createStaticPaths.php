@@ -3,7 +3,7 @@ namespace Unisrc\xd\ubs\zzz\udt\git;
 
 use Unisrc\xu\lib\env;
 use Unisrc\xu\lib\pst\fs\path;
-use Unisrc\xd\ubs\zzz\udt\Nodes;
+use Unisrc\xu\ubs\zzz\udt\staticPaths;
 
 /*
 DESCR:
@@ -14,7 +14,7 @@ class createStaticPaths {
 	public static function _($doit, $listfunc){
 
 		$unisrc = env::_('unisrc');
-		$paths = Nodes::staticPaths();
+		$paths = staticPaths::_();
 		$fb = [];
 
 		foreach($paths as $path){

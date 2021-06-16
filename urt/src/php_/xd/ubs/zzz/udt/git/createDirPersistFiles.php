@@ -6,8 +6,9 @@ use Unisrc\xu\lib\env;
 use Unisrc\xu\lib\pst\fs\files;
 use Unisrc\xu\lib\pst\fs\traverse;
 
-use Unisrc\xd\ubs\zzz\udt\XNSs;
-use Unisrc\xd\ubs\zzz\udt\Nodes;
+use Unisrc\xu\ubs\zzz\udt\XNSs;
+use Unisrc\xu\ubs\zzz\udt\staticPaths;
+use Unisrc\xu\ubs\zzz\udt\possiblePaths;
 
 class createDirPersistFiles {
 	
@@ -29,10 +30,10 @@ class createDirPersistFiles {
 		
 		$XNSs = XNSs::keys('UBS');
 
-		$staticPaths = Nodes::staticPaths();
+		$staticPaths = staticPaths::_();
 		$lookupStatic = array_fill_keys($staticPaths, 0);
 
-		$possiblePaths = Nodes::possiblePaths();
+		$possiblePaths = possiblePaths::_();
 		foreach($possiblePaths as $path){
 
 			$abspath = $unisrc.$path.'/';
