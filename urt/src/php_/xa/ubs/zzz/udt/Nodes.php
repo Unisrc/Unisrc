@@ -1,5 +1,5 @@
 <?php
-namespace Unisrc\xd\ubs\zzz\udt;
+namespace Unisrc\xa\ubs\zzz\udt;
 
 use Unisrc\xu\lib\env;
 
@@ -10,9 +10,9 @@ use Unisrc\xu\lib\str\flags;
 use Unisrc\xu\lib\str\contains;
 
 use Unisrc\xu\lib\i18n\LCDs;
-use Unisrc\xd\ubs\zzz\udt\PLAs;
-use Unisrc\xd\ubs\zzz\udt\LTRs;
-use Unisrc\xd\ubs\zzz\udt\XNSs;
+use Unisrc\xu\ubs\zzz\udt\PLAs;
+use Unisrc\xu\ubs\zzz\udt\LTRs;
+use Unisrc\xu\ubs\zzz\udt\XNSs;
 
 /*
 DESCR:
@@ -161,7 +161,7 @@ class Nodes {
 
 		if($trtb) return $trtb;
 
-		return $trtb = jsunLoad::_(env::_('astwww').'xd/ubs/zzz/udt/Nodes.jsun');
+		return $trtb = jsunLoad::_(env::_('astwww').'xa/ubs/zzz/udt/Nodes.jsun');
 	}
 }
 
