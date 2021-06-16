@@ -1,6 +1,6 @@
 {
 //	Resource ID				relative path					filename				type		generator								reader
-	"udt.staticPaths":	[	"urt/ast/www/xu/ubs/zzz/udt/",	"staticPaths.jsun",		"table",	"xd.ubs.zzz.udt.Nodes::staticPaths",	"xu.ubs.zzz.udt.staticPaths::_" ],
-	"udt.possiblePaths":[	"urt/ast/www/xu/ubs/zzz/udt/",	"possiblePaths.jsun",	"table",	"xd.ubs.zzz.udt.Nodes::possiblePaths",	"xu.ubs.zzz.udt.possiblePaths::_" ]
+	"udt.staticPaths":	[	"urt/ast/www/xu/ubs/zzz/udt/",	"staticPaths.jsun",		"table",	"xa.ubs.zzz.udt.Nodes::staticPaths",	"xu.ubs.zzz.udt.staticPaths::_" ],
+	"udt.possiblePaths":[	"urt/ast/www/xu/ubs/zzz/udt/",	"possiblePaths.jsun",	"table",	"xa.ubs.zzz.udt.Nodes::possiblePaths",	"xu.ubs.zzz.udt.possiblePaths::_" ]
 }
 
