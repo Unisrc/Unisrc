@@ -20,13 +20,13 @@ class createDirPersistFiles {
 		Traverses the UBS UDT possible and existing paths,
 		and manages DPFs.
 	*/
-	public static function _($doit, $listfunc, $rm){
+	public static function _($doit){
 
 		$fb = [ [], [] ];
 		$unisrc = env::_('unisrc');
 		$dpfn = self::FN;
 
-		$ttcb_setDPF = self::ttcb_setDPF($doit, $unisrc, $dpfn, $fb, $rm);
+		$ttcb_setDPF = self::ttcb_setDPF($doit, $unisrc, $dpfn, $fb);
 		
 		$XNSs = XNSs::keys('UBS');
 
@@ -52,6 +52,10 @@ class createDirPersistFiles {
 			}
 		}
 
+		$listfunc = function($list){
+			return ($c = count($list)) ? ($c."\n".join("\n", $list)) : '0';
+		};
+
 		$created = $listfunc($fb[0]);
 		$removed = $listfunc($fb[1]);
 
@@ -66,9 +70,9 @@ class createDirPersistFiles {
 		It focusses on current node + dn to see if a DPF
 		needs creation or removal.
 	*/
-	private static function ttcb_setDPF($doit, $unisrc, $dpfn, &$fb, $rm){
+	private static function ttcb_setDPF($doit, $unisrc, $dpfn, &$fb){
 
-		return function($node, $dn, $isd, $z) use($doit, $unisrc, $dpfn, &$fb, $rm){
+		return function($node, $dn, $isd, $z) use($doit, $unisrc, $dpfn, &$fb){
 
 			$bStatic = ($z == -1) ? $isd : false;
 
@@ -80,28 +84,20 @@ class createDirPersistFiles {
 			$exists = file_exists($absDPF);
 			$length = count(files::_($abspath, null, true, 2));
 
-			if(!$rm){
+			if(!$length || (!$exists && $bStatic)){
 
-				if(!$length || (!$exists && $bStatic)){
-
-					if($doit){
-						list($mcs, $uts) = explode(' ', microtime());
-						$unique = date('YmdHis', $uts).substr($mcs, 1);
-						file_put_contents($absDPF, $unique);
-					}
-					$fb[0][] = $relDPF;
-
-				}else if($length > 1){
-
-					if($exists && !$bStatic){
-						if($doit)
-							unlink($absDPF);
-						$fb[1][] = $relDPF;
-					}
+				if($doit){
+					list($mcs, $uts) = explode(' ', microtime());
+					$unique = date('YmdHis', $uts).substr($mcs, 1);
+					file_put_contents($absDPF, $unique);
 				}
-			}else{
-				if($exists){
-					unlink($absDPF);
+				$fb[0][] = $relDPF;
+
+			}else if($length > 1){
+
+				if($exists && !$bStatic){
+					if($doit)
+						unlink($absDPF);
 					$fb[1][] = $relDPF;
 				}
 			}

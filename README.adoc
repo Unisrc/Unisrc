@@ -72,6 +72,7 @@ BRANCH:
 	ENH		Enhance code; readability, comments, etc.
 	OPT		Optimize code; for speed or size.
 	REA		Rearrange code; in order to improve setup, coupling, expandability, etc.
+	RLC		Relocate code; moving a function or class to another place.
 	MIG		Migrate code; refactor to from one to another set of dependencies.
 	FIX		Fix code; remove a quirk or a bug.
 

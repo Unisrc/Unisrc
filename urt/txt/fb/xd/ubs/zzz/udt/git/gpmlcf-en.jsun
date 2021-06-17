@@ -2,7 +2,6 @@
 	"report": [
 		"                   mode: %s",
 		".gitignore file created: %s",
-		"    static dirs created: %s",
 		"           DPFs created: %s",
 		"           DPFs removed: %s"
 	]
