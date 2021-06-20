@@ -7,9 +7,8 @@ use Unisrc\xu\lib\cls\dntons;
 use Unisrc\xu\lib\pst\fs\path;
 /*
 DESCR:
-	Generate and store a table,
-	outside 'xa' domain,
-	inside 'xb...xz' damain.
+	Generate and store JSUN,
+
 
 PARAM:
 	$doit		booleand
@@ -23,9 +22,9 @@ RETURNS:
 
 NOTES:
 */
-class exportTable {
+class exportJsun {
 
-	public static function _($relpath, $fn, $dnGenerator, $dnReader, $doit){
+	public static function _($relpath, $fn, $content, $dnReader, $doit){
 
 		//Addressing
 		$unisrc = env::_('unisrc');
@@ -40,18 +39,13 @@ class exportTable {
 			'pc'=>'false', 'fx'=>'false', 'fc'=>'false'
 		];
 
-		//Create JSUN file data
-		$nsGenerator = dntons::_($dnGenerator);
-		$table = $nsGenerator();
-		$lines = join("\",\n\t\"", $table);
+		//Complete JSUN file data
 		$jsun = <<< EOT
 		/*
 		!!! DO NOT MODIFY !!!
 		This file is generated at architecture level (xa).
 		*/
-		[
-			"$lines"
-		]
+		$content
 
 		EOT;
 
