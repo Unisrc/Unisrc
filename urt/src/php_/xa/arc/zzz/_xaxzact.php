@@ -2,77 +2,66 @@
 namespace Unisrc\xa\arc\zzz;
 
 use Unisrc\xu\lib\env;
+use Unisrc\xu\lib\cls\dntons;
 use Unisrc\xu\lib\pst\enc\jsunLoad;
-use Unisrc\xa\lib\pst\xaxz\exportTable;
 
 /*
 DESCR:
-	Exports resources maintained here in xa,
-	to downstream xb...xz domains.
+	Centralizes actions at 'xa' architecture level
+	on any downstream 'xb...xz' level.
 
 PARAM:
 	$cmd		string
-		'select'
-			Selects ids or a record from the export table.
-			Without $id, a list of all ids is returned.
-			With $id, the record with that id is returned.
-		'make'
-			Creates a resource from the resource table,
-			and stores it according to record inside one
-			of xb...xz.
-			Expects $id.
+		'list'
+			Returns the available actions list.
 
-	$id			string
-		A key to a record in the export table.
+		'execute'
+			Executes an action from the action list
+			using $index.
+
+	$index		integer
+		An index in the actions list.
 
 	$doit		boolean
-		false		default
-			Dry run; only shows what the result would be.
+		Operation mode
+
+		false
+				DRY-RUN
 		true
-			Perform the actions shown in dry run.
+				DO-IT
 
 RETURNS:
 	null
 
 NOTES:
 */
-class _xaxzexport {
+class _xaxzact {
 
-	public static function _($cmd, $id='', $doit=false){
+	public static function _($cmd, $index=-1, $doit=false){
 
 		switch($cmd){
-		case 'select':
-			if($id){
-				$cns = [
-					'target path', 'target basename',
-					'type', 'generator', 'reader'
-				];
-				$row = self::table($id);
-				return [ $cns, $row ];
-			}else{
-				return array_keys(self::table());
-			}
+		case 'list':
+			return self::actions();
 		break;
-		case 'make':
-			$row = self::table($id);
-			list($relpath, $fn, $type, $dnGenerator, $dnReader) = $row;
-
-			switch($type){
-			case 'table':
-				exportTable::_($relpath, $fn, $dnGenerator, $dnReader, $doit);
-			break;
-			}
+		case 'execute':
+			$dnAction = self::actions($index);
+			$nsAction = dntons::_($dnAction);
+			$nsAction($doit);
 		break;
 		}
 	}
 
 ///////////////////////////////////////////////////////////////  P R I V A T E
 
-	private static function table($id=''){
+	private static function actions($index=-1){
 
-		$ffn = env::_('astwww').'xa/arc/zzz/_xaxzexport.jsun';
-		$table = jsunLoad::_($ffn);
+		static $list;
 
-		return (!$id) ? $table : $table[$id];
+		if(!$list){
+			$ffn = env::_('astwww').'xa/arc/zzz/_xaxzact.jsun';
+			$list = jsunLoad::_($ffn);
+		}
+
+		return ($index < 0) ? $list : $list[$index];
 	}
 }
