@@ -2,5 +2,5 @@
 <?php
 $env = include	__DIR__.'/../../../epc/xu/ubs/env.php';
 
-use Unisrc\xa\arc\zzz\xaxzexport;
-xaxzexport::_();
+use Unisrc\xa\arc\zzz\xaxzact;
+xaxzact::_();

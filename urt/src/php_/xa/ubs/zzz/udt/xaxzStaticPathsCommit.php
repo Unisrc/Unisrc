@@ -30,13 +30,13 @@ NOTES:
 		table: urt/ast/www/xa/ubs/zzz/udt/Nodes.jsun
 		table: urt/ast/www/xa/ubs/zzz/udt/PLA.jsun
 	$ git checkout -b 'NEW_ubsdir-dn'
-	$ xaxz jsun udt.staticPaths
-	$ xaxz jsun udt.possiblePaths
-	$ xaxz apply udt.staticPaths		<-- Uses this function.
+	$ xaxzact execute udt.xaxzStaticPathsExport
+	$ xaxzact execute udt.possiblePaths
+	$ xaxzact execute udt.xaxzStaticPathsCommit		<-- Uses this function.
 	$ gpmlcf
 	+ Merge and push 'NEW_ubsdir-dn'
 */
-class createStaticPaths {
+class xaxzStaticPathsCommit {
 	
 	public static function _($doit){
 

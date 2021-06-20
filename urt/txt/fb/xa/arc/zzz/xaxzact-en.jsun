@@ -1,0 +1,29 @@
+{
+	"doit": [ "", "Use flag '-d' for mode: DO-IT!" ],
+	"help": [
+		"    DESCR:",
+		"        Performs an action at 'xa' architure level",
+		"        on any downstream 'xb...xz' level.",
+		"",
+		"    FORMAT:",
+		"        xaxzact [command [argument [-d]]]",
+		"",
+		"    COMMANDS:",
+		"        ['help']",
+		"            Display this help text.",
+		"",
+		"        'list'",
+		"            Display available actions list.",
+		"",
+		"        'execute'",
+		"            Execute the action specified by index.",
+		"",
+		"    FLAGS:",
+		"        -d",
+		"            Execution mode.",
+		"            Only with command 'execute'.",
+		"            !Set: DRY-RUN",
+		"            =Set: DO-IT!",
+		""
+	]
+}

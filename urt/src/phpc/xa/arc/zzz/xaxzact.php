@@ -3,14 +3,14 @@ namespace Unisrc\xa\arc\zzz;
 
 use Unisrc\xu\lib\txt\Fb;
 use Unisrc\xu\lib\cli\Args;
-use Unisrc\xa\arc\zzz\_xaxzexport;
+use Unisrc\xa\arc\zzz\_xaxzact;
 
 /*
 DESCR:
 
-	CLI interface to _xaxzexport;
+	CLI interface to _xaxzact;
 
-		Domain 'xa' to 'xb...xz' resource export.
+		Domain 'xa' -> 'xb...xz' actions.
 
 PARAM:
 	none
@@ -20,7 +20,7 @@ RETURNS:
 
 NOTES:
 */
-class xaxzexport {
+class xaxzact {
 
 	public static function _(){
 
@@ -35,23 +35,17 @@ class xaxzexport {
 
 		switch($cmd = $args->sv(0)){
 		
-		case 'select':
-			if(($id = $args->sv(1)) && self::isid($id)){
-				$fms = "%15s: %s\n";
-				printf($fms, 'id', $id);
-				list($cns, $row) = _xaxzexport::_($cmd, $id);
-				foreach($cns as $i => $cn)
-					printf($fms, $cn, $row[$i]);
-			}else{
-				$ids = _xaxzexport::_($cmd);
-				echo join("\n", $ids), "\n";
+		case 'list':
+			$actions = _xaxzact::_($cmd);
+			foreach($actions as $index => $dnAction){
+				printf("[%2u] %s\n", $index, $dnAction);
 			}
 		break;
-
-		case 'make':
-			if(($id = $args->sv(1)) && self::isid($id)){
+		case 'execute':
+			$index = $args->sv(1);
+			if(($index !== false) && self::isindex((int)$index)){
 				$doit = $args->fl('d');
-				_xaxzexport::_($cmd, $id, $doit);
+				_xaxzact::_($cmd, $index, $doit);
 				if(!$doit) Fb::message(__CLASS__, 'doit');
 			}else{
 				self::help();
@@ -67,10 +61,11 @@ class xaxzexport {
 
 ///////////////////////////////////////////////////////////////  P R I V A T E
 
-	private static function isid($id){
+	private static function isindex($index){
 		
-		$ids = _xaxzexport::_('select');
-		return in_array($id, $ids);
+		$length = count(_xaxzact::_('list'));
+
+		return !!((0 <= $index) && ($index < $length));
 	}
 
 	private static function help(){
